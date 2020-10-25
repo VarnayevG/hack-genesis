@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="static/css/main.css">
+<title>Инвестиционный помощник</title>
+</head>
+<body>
+  <div class="topnav">
+    <ul>
+      <li><a href="">Знакомство</a></li>
+      <li><a href="trial">Симулятор инвестиций</a></li>
+      <li><a href="stocks_currency_description">Акции и Валюта</a></li>
+      <li><a href="bonds_plans_description">Облигации и Структурные планы</a></li>
+      <li><a href="helper">Помощь в выборе</a></li>
+      <li><a href="purchase">Купить</a></li>
+    </ul>
+  </div>
+<h1>{{ data.question }}</h1>
+<form action="/helper/results">
+  {% for e in data.fields %}
+     <input type="radio" name="field" value="{{ e }}"> {{ e }}<br>
+  {% endfor %}
+  <input type="submit" value="К результатам" />
+</form>
+</body>
+</html>
